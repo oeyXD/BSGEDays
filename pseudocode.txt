@@ -1,0 +1,13 @@
+1. To calculate mean no. of paces:
+/a. create a global array
+/b. extract each pace quantity
+/c. push the new pace quantity to the global array
+/d. calculate the mean pace quantity
+e. post the mean pace quantity to the respective html element
+
+2. To calculate mean pace factor:
+a. extract each pace quantity from the global array
+b. divide the distance by each pace quantity
+c. post each pace factor on the respective html element
+d. calculate mean pace factor, and divide by 100
+e. post the mean pace factor to the respective html element
