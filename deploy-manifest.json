@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "frameworkPath": "Express Backend",
+  "routes": [
+    {
+      "path": "/api/*",
+      "target": {
+        "kind": "Compute",
+        "src": "default",
+        "fallback": "200"
+      }
+    },
+    {
+      "path": "/*",
+      "target": {
+        "kind": "Amplify"
+      }
+    }
+  ]
+}
