@@ -4,5 +4,4 @@ git commit -m "Initial commit of local project"
 git remote add origin <remote_repository_URL>
 git push -u origin main
 
-
 git clone <remote_repository_URL>
