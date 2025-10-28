@@ -32,6 +32,7 @@ function calcMNPace() {
     );
   }
   meanPace = (total / 10).toFixed(7);
+  paces = [];
   return (document.querySelector("body > p:nth-child(4) > span").innerHTML =
     meanPace);
 }

@@ -1,25 +1,24 @@
 {
-  "name": "backend",
+  "name": "BSGEDaysNotes",
   "version": "1.0.0",
   "description": "",
-  "main": "index2.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index2.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "CaseyCollins",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^2.2.0",
+    "bootstrap": "^5.3.8",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
     "express-rate-limit": "^8.1.0",
     "helmet": "^8.1.0",
     "morgan": "^1.10.1"
-  },
-  "engines": {
-    "node": ">=22.19.0"
   }
 }

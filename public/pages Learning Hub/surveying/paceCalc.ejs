@@ -1,0 +1,178 @@
+<% title='Pace Calculator | BSGE Days' %>
+  <h1>Pace Calculator</h1>
+
+  <p>
+    Total Distance <i>TD</i>:
+    <input class="form-control" type="number" placeholder="Enter total distance (TD) in meters (m)"
+      name="totalDistance" />
+  </p>
+  <div class="alert alert-primary d-flex align-items-center" role="alert">
+    <p>
+      ℹ️ <b>Note: </b> Enter the number of paces for 10 separate trials below.</p>
+  </div>
+  <table class="table">
+    <thead>
+      <th scope="col">Trial No.</th>
+      <th scope="col">No. of paces</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace1" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace2" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace3" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace4" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace5" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace6" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace7" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace8" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace9" />
+        </td>
+
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><input class="form-control" type="number" step="0.001" min="0" placeholder="Enter num" name="noPace10" />
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <button class="meanpace btn btn-outline-secondary" id="button1">(1) Calculate Mean No. of Paces</button>
+
+  <p>Mean no. of Paces = <span id="mnp">(No Data)</span> Paces</p>
+  <button class="pacefact btn btn-outline-secondary" id="button2">(2) Calculate Pace Factor</button>
+  <p class="text-start">
+    Pace Factor<i> PF</i> = <span id="pf">(No Data)</span>
+    <math>
+      <mfrac>
+        <mn>m</mn>
+        <mn>pace</mn>
+      </mfrac>
+    </math>
+  </p>
+  <button class="pacedist btn btn-outline-secondary" id="button3" type="button">(3) Calculate Pace Distance</button>
+  <p class="text-start">
+    <mtext>Pace Distance</mtext><i> PD</i>
+    <mtext> =</mtext>
+    <i>
+      <mtext>PF * Mean no. of Paces</mtext>
+    </i>
+    = <span id="pd">(No Data)</span> m
+  </p>
+  <button class="relprecise btn btn-outline-secondary" id="button4" type="button">(4) Calculate Relative
+    Precision</button>
+  <p class="text-start">
+    <mtext>Relative Precision</mtext><i> RP</i>
+    <mtext> =</mtext>
+    <math>
+      <mfrac>
+        <mn>TD - PD</mn>
+        <mn>TD</mn>
+      </mfrac>
+    </math>
+    = <span id="rp">(No Data)</span>
+  </p>
+  <div class="alert alert-warning" role="alert">
+    <p>⚠️ <b>Note:</b> Verification of relative precision is recommended.</p>
+  </div>
+  <hr />
+
+  <!-- References and Contributors start -->
+  <a data-bs-toggle="collapse" href="#RefAndContrib" role="button" aria-expanded="false" aria-controls="collapseExample"
+    class="link-dark link-underline-opacity-10 link-underline-opacity-100-hover">
+    <h2>References/Contributors:</h2>
+  </a>
+  <div class="collapse container-fluid" id="RefAndContrib">
+    <h3>Contributors:</h3>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">SheriffSurveyor</li>
+    </ul>
+  </div>
+  <!-- References and Contributors end -->
+
+
+  <script>
+    let totalDistance = Number(), paces = [], meanPace = Number(), meanPD = Number(), meanRP = Number();
+
+    // calculate mean No. of Paces
+    document.querySelector("#button1").addEventListener("click", calcMNPace); // adds listener to button 1
+    function calcMNPace() {
+      let total = 0, numOfPaces = 0;
+      for (let i = 1; i <= 10; i++) {
+        if (document.querySelector(`body > div:nth-child(3) > table > tbody > tr:nth-child(${i}) > td:nth-child(2) > input`).value != "") {
+          total += Number(document.querySelector(`body > div:nth-child(3) > table > tbody > tr:nth-child(${i}) > td:nth-child(2) > input`).value);
+          numOfPaces++;
+          paces.push(document.querySelector(`body > div:nth-child(3) > table > tbody > tr:nth-child(${i}) > td:nth-child(2) > input`).value);
+        }
+      }
+      meanPace = (total / numOfPaces).toFixed(7);
+      paces = [];
+      console.log(numOfPaces);
+      numOfPaces = 0, total = 0;
+      return (document.querySelector("#mnp").innerHTML = meanPace);
+    }
+
+    // calculate mean Pace Factor
+    document.querySelector("#button2").addEventListener("click", calcMPF); // adds listener to button 2
+    function calcMPF() {
+      totalDistance = Number(document.querySelector("body > div:nth-child(3) > p > input[type=number]").value);
+      meanPF = (totalDistance / meanPace).toFixed(7);
+      return (document.querySelector("#pf").innerHTML = meanPF);
+    }
+
+    // calculate mean Pace Distance
+    document.querySelector("#button3").addEventListener("click", calcMPD); // adds listener to button 3
+    function calcMPD() {
+      meanPD = (meanPF * meanPace).toFixed(7);
+      return (document.querySelector("#pd").innerHTML = meanPD);
+    }
+
+    // calculate mean Relative Precision
+    document.querySelector("#button4").addEventListener("click", calcMRP); // adds listener to button 4
+    function calcMRP() {
+      meanRP = ((totalDistance - meanPD) / totalDistance).toFixed(10);
+      return (document.querySelector("#rp").innerHTML = meanRP);
+    }
+  </script>
