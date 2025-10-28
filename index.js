@@ -9,7 +9,7 @@ import { title } from "process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // paths
 const frontendPath = path.join(__dirname, "/public");
@@ -55,6 +55,6 @@ app.use((req, res) => {
 
 app.listen(port, () => {
   console.log(
-    `Server is running on port ${port}. Go to: http://localhost:${port}/`
+    `Server is running on port ${PORT}. Go to: http://localhost:${PORT}/`
   );
 });
