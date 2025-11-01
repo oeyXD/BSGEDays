@@ -9,10 +9,11 @@
     "start": "node index.js"
   },
   "engines": {
-    "node": "22.19"
+    "node": "22.x",
+    "npm": "10.x"
   },
   "keywords": [],
-  "author": "CaseyCollins",
+  "author": "Sheriff Surveyor",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^2.2.0",
