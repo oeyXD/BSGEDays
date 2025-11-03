@@ -27,7 +27,6 @@ app.set("layout", "layout");
 // middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(frontendPath));
-
 // site name
 const pgnm = "BSGE Days";
 
