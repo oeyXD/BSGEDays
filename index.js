@@ -54,7 +54,7 @@ app.get("/", (req, res) => { res.render("home.ejs", { layout: "layout.ejs" }) })
     app.get("/surveying/meridians", (req, res) => { res.render(learningSurvPath + "/meridians.ejs") }); //
     app.get("/surveying/magdeclcomps", (req, res) => { res.render(learningSurvPath + "/magDeclComps.ejs") }); // Magnetic Declination and Compass page route
     app.get("/surveying/north", (req, res) => { res.render(learningSurvPath + "/theNorth.ejs") }); // The North page route
-    app.get("/surveying/angmeasunts", (req, res) => { res.render(learningSurvPath + "/angularMeasUnits.ejs") }); // Units of Angular Measurement page route
+    app.get("/surveying/angmeasunits", (req, res) => { res.render(learningSurvPath + "/angularMeasUnits.ejs") }); // Units of Angular Measurement page route
   }
   // tools page routes
   {
