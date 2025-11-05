@@ -12,7 +12,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // paths
-
 const frontendPath = path.join(__dirname, "/public"); // frontend path
 const partialsPath = path.join(frontendPath, "/pages partials"); // partials path
 const learningMainPath = path.join(frontendPath, "/pages Learning Hub"); // main learning hub path
