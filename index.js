@@ -41,25 +41,32 @@ app.get("/", (req, res) => { res.render("home.ejs", { layout: "layout.ejs" }) })
 {
   app.get("/surveying", (req, res) => { res.render(learningMainPath + "/Surveying.ejs") }); // Main surveying page route
 
-  // corrections page routes
+  // tape page routes
   {
     app.get("/surveying/corrnormtension", (req, res) => { res.render(learningSurvPath + "/corrNormTension.ejs") }); // Correction Due to Normal Tension page route
     app.get("/surveying/corrsag", (req, res) => { res.render(learningSurvPath + "/corrSag.ejs") }); // Correction Due to Sag page route
     app.get("/surveying/corrtemp", (req, res) => { res.render(learningSurvPath + "/corrTemp.ejs") }); // Correction Due to Temperature page route
     app.get("/surveying/corrtension", (req, res) => { res.render(learningSurvPath + "/corrTension.ejs") }); // Correction Due to Normal Tension page route
     app.get("/surveying/gencorrtaping", (req, res) => { res.render(learningSurvPath + "/genCorrTaping.ejs") }); // General taping corrections page route
+    app.get("/surveying/tapinproced", (req, res) => { res.render(learningSurvPath + "/tapeProc.ejs") }); //
   }
   // about angle page routes
   {
-    app.get("/surveying/meridians", (req, res) => { res.render(learningSurvPath + "/meridians.ejs") }); //
-    app.get("/surveying/magdeclcomps", (req, res) => { res.render(learningSurvPath + "/magDeclComps.ejs") }); // Magnetic Declination and Compass page route
-    app.get("/surveying/north", (req, res) => { res.render(learningSurvPath + "/theNorth.ejs") }); // The North page route
+    app.get("/surveying/meridians", (req, res) => { res.render(learningSurvPath + "/meridians.ejs") }); // Meridians page route
     app.get("/surveying/angmeasunits", (req, res) => { res.render(learningSurvPath + "/angularMeasUnits.ejs") }); // Units of Angular Measurement page route
+    app.get("/surveying/north", (req, res) => { res.render(learningSurvPath + "/theNorth.ejs") }); // The North page route
+    app.get("/surveying/linedirangle", (req, res) => { res.render(learningSurvPath + "/lineDirAngle.ejs") }); // Line Directions and Types of Angles page route
+    app.get("/surveying/bearings", (req, res) => { res.render(learningSurvPath + "/bearings.ejs") }); // Bearings page route
+    app.get("/surveying/azimuths", (req, res) => { res.render(learningSurvPath + "/azimuths.ejs") }); // Azimuths page route
+    app.get("/surveying/magdeclcomps", (req, res) => { res.render(learningSurvPath + "/magDeclComps.ejs") }); // Magnetic Declination and Compass page route
   }
   // tools page routes
   {
-    app.get("/surveying/pacecalc", (req, res) => { res.render(learningSurvPath + "/pacecalc.ejs") }); // Pacecalc page route
     app.get("/surveying/transit", (req, res) => { res.render(learningSurvPath + "/transit.ejs") }); // The Engineer's Transit page route
+  }
+  // forms page routes
+  {
+    app.get("/surveying/pacecalc", (req, res) => { res.render(learningSurvPath + "/pacecalc.ejs") }); // Pacecalc page route
   }
 }
 
